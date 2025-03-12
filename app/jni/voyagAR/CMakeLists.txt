@@ -43,6 +43,7 @@ file(GLOB SDL_CORE_SOURCES
         ${SDL_PATH}/src/time/*.c
         ${SDL_PATH}/src/timer/*.c
         ${SDL_PATH}/src/video/*.c
+        ${SDL_PATH}/src/*.c
         # Add other core directories as needed
 )
 
