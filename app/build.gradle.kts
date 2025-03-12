@@ -31,12 +31,13 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
+            path = file("jni/voyagAR/CMakeLists.txt")
             version = "3.22.1"
         }
     }
     buildFeatures {
         viewBinding = true
+        prefab = true
     }
 }
 
@@ -48,4 +49,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation (files("jni/sdl/libs/SDL3-3.2.8.aar"))
 }
