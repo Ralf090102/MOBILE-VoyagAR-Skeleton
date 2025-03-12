@@ -33,6 +33,7 @@
 
 #include <stdarg.h>
 
+#define SDL_HIDAPI_DISABLED 1
 #define HAVE_GCC_ATOMICS 1
 
 #define HAVE_ALLOCA_H 1
@@ -149,7 +150,7 @@
 /* Enable various input drivers */
 #ifndef SDL_JOYSTICK_DISABLED
 #define SDL_JOYSTICK_ANDROID 1
-#define SDL_JOYSTICK_HIDAPI 1
+//#define SDL_JOYSTICK_HIDAPI 1
 #define SDL_JOYSTICK_VIRTUAL 1
 #endif /* SDL_JOYSTICK_DISABLED */
 #ifndef SDL_HAPTIC_DISABLED
