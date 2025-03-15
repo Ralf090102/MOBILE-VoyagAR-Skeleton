@@ -3,7 +3,6 @@ package com.example.mobile_voyagar_skeleton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import com.example.mobile_voyagar_skeleton.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,18 +10,13 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("VoyagAR");
     }
 
-    private ActivityMainBinding binding;
+    private native String initSDL();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
+        TextView textView = new TextView(this);
+        textView.setText(initSDL());
+        setContentView(textView);
     }
-
-    public native String stringFromJNI();
 }

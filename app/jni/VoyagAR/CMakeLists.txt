@@ -7,7 +7,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cp
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${log-lib} ${android-lib})
+target_link_libraries(${CMAKE_PROJECT_NAME} SDL ${log-lib} ${android-lib})
 
 
 

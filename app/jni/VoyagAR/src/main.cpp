@@ -1,10 +1,10 @@
+#include <SDL.h>
 #include <jni.h>
-#include <string>
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_mobile_1voyagar_1skeleton_MainActivity_stringFromJNI(
-        JNIEnv* env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++ :)";
-    return env->NewStringUTF(hello.c_str());
+Java_com_example_mobile_1voyagar_1skeleton_MainActivity_initSDL(JNIEnv* env,jobject) {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        return env->NewStringUTF(SDL_GetError());
+    }
+    return env->NewStringUTF("SDL Initialized Successfully");
 }
