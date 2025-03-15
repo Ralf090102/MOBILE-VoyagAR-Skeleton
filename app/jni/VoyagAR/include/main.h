@@ -1,0 +1,8 @@
+//
+// Created by herna on 14/03/2025.
+//
+
+#ifndef MOBILE_VOYAGAR_SKELETON_MAIN_H
+#define MOBILE_VOYAGAR_SKELETON_MAIN_H
+
+#endif //MOBILE_VOYAGAR_SKELETON_MAIN_H

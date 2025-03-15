@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.22.1)
+
+project(VoyagAR)
+
+set(CMAKE_ANDROID_API_MIN 16)
+set(CMAKE_ANDROID_STL_TYPE c++_shared)
+
+set(CMAKE_DISABLE_SOURCE_CHANGES ON)
+set(CMAKE_DISABLE_IN_SOURCE_BUILDS ON)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CMAKE_BUILD_TYPE_INIT "Debug")
+
+add_subdirectory(SDL)
+add_subdirectory(VoyagAR)
+
