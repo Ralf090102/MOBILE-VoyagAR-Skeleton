@@ -1,10 +1,18 @@
-#include <jni.h>
-#include <string>
+#include <SDL.h>
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_mobile_1voyagar_1skeleton_MainActivity_stringFromJNI(
-        JNIEnv* env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++ :)";
-    return env->NewStringUTF(hello.c_str());
+extern "C" int SDL_main(int argc, char *argv[])
+{
+    if (SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO) != 0) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init failed (%s)", SDL_GetError());
+    }
+
+    if (SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Anito VoyagAR Mobile",
+                                 "NO SHOT DID IT ACTUALLY WORK!??", NULL) != 0) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_ShowSimpleMessageBox failed (%s)", SDL_GetError());
+    }
+
+    //Main Loop should go here
+
+    SDL_Quit();
+    return 0;
 }

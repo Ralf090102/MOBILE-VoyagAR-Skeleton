@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.22.1)
 
-project(VoyagAR)
+project(Anito-VoyagAR)
 
-set(CMAKE_ANDROID_API_MIN 16)
-set(CMAKE_ANDROID_STL_TYPE c++_shared)
+if (ANDROID)
+    add_definitions(-DANDROID -D__ANDROID__)
+endif()
+
+set(ANDROID_PLATFORM 27)
+set(ANDROID_STL c++_static)
+set(ANDROID_ABI armeabi-v7a arm64-v8a x86 x86_64)
 
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILDS ON)

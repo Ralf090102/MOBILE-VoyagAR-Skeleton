@@ -18,6 +18,13 @@ android {
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
         }
+
+        externalNativeBuild {
+            cmake {
+                arguments += listOf("-DANDROID=1", "-D__ANDROID__=1")
+                cppFlags += "-DANDROID -D__ANDROID__"
+            }
+        }
     }
 
     buildTypes {
