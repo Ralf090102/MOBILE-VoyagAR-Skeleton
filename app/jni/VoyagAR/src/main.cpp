@@ -1,10 +1,15 @@
 #include <SDL.h>
-#include <jni.h>
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_mobile_1voyagar_1skeleton_MainActivity_initSDL(JNIEnv* env,jobject) {
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-        return env->NewStringUTF(SDL_GetError());
+int main(int argc, char *argv[])
+{
+    if (SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO) != 0) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init failed (%s)", SDL_GetError());
     }
-    return env->NewStringUTF("SDL Initialized Successfully");
+
+    if (SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Anito VoyagAR Mobile",
+                                 "NO SHOT DID IT ACTUALLY WORK!??", NULL) != 0) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_ShowSimpleMessageBox failed (%s)", SDL_GetError());
+    }
+
+    return 0;
 }
