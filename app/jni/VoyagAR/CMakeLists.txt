@@ -10,4 +10,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../SDL/include)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} private SDL3 ${log-lib} ${android-lib})
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
+        SDL3
+        ${log-lib}
+        ${android-lib})

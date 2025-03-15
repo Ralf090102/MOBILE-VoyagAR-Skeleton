@@ -1,6 +1,6 @@
 #include <SDL.h>
 
-int main(int argc, char *argv[])
+extern "C" int SDL_main(int argc, char *argv[])
 {
     if (SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO) != 0) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init failed (%s)", SDL_GetError());
@@ -11,5 +11,8 @@ int main(int argc, char *argv[])
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_ShowSimpleMessageBox failed (%s)", SDL_GetError());
     }
 
+    //Main Loop should go here
+
+    SDL_Quit();
     return 0;
 }

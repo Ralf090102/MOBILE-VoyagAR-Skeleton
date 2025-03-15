@@ -3,10 +3,7 @@ cmake_minimum_required(VERSION 3.22.1)
 project(Anito-VoyagAR)
 
 if (ANDROID)
-    message(STATUS "Building for Android!")
     add_definitions(-DANDROID -D__ANDROID__)
-else()
-    message(FATAL_ERROR "This project is only for Android! CMake is targeting a non-Android platform.")
 endif()
 
 set(ANDROID_PLATFORM 27)
